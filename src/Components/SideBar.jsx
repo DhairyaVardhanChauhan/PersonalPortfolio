@@ -12,7 +12,7 @@ const SideBar = () => {
   const [active, setIsActive] = useState(0);
 
   return (
-    <div className='flex flex-col fixed top-0 left-0 h-full justify-center p-2 z-50'>
+    <div className='flex flex-col fixed top-0 left-0 h-full justify-center p-2 z-50 min-[0px]:hidden lg:flex'>
       <SideIcon text="Home" isActive={active === 0} handleClick={() => setIsActive(0)}>
         <HiOutlineHome className={`${active===0?"text-white":"text-black"} font-extrabold text-[20px] flex-shrink-0 hover-white`}/>
       </SideIcon>
