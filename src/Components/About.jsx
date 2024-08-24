@@ -5,40 +5,50 @@ import { IoNewspaperSharp } from "react-icons/io5";
 import { LuBraces, LuDownload } from "react-icons/lu";
 import Headings from "./Headings";
 
-
 const details = [
   {
     number: 1,
-    text: "Internships"
+    text: "Internships",
+    icon: (
+      <BsSuitcaseLgFill className="font-extrabold lg:text-[20px] xs:text-[16px] flex-shrink-0" />
+    ),
   },
   {
-    number:4,
-    text:"Projects"
+    number: 4,
+    text: "Projects",
+    icon: (
+      <LuBraces className="font-extrabold lg:text-[20px] xs:text-[16px] flex-shrink-0" />
+    ),
   },
   {
-    number:6,
-    text:"Research Work"
+    number: 6,
+    text: "Research Work",
+    icon: (
+      <IoNewspaperSharp className="font-extrabold lg:text-[20px] xs:text-[16px] flex-shrink-0" />
+    ),
   },
   {
-    number:14,
-    text:"Activities & Awards"
-  }
-]
-
+    number: 14,
+    text: "Activities & Awards",
+    icon: (
+      <GiAchievement className="font-extrabold lg:text-[20px] xs:text-[16px] flex-shrink-0" />
+    ),
+  },
+];
 
 const About = () => {
   return (
-    <div>
+    <div className="ml-0 mr-0 xs:ml-10 xs:mr-10 lg:ml-0 lg:mr-0">
       <Headings>About</Headings>
-      <div className="flex mt-[60px]">
-        <div className="w-1/3 border-black border-2 object-cover">
+      <div className="flex lg:flex-row min-[0px]:flex-col mt-[60px]">
+        <div className="min-[0px]:w-full lg:w-1/3 object-cover pt-8">
           <img
-            src="dummy_img.png"
+            src="portfolio-img1.jpeg"
             alt="Profile"
-            className="img-fluid rounded-lg"
+            className="object-cover rounded-lg lg:h-[27rem] w-full"
           />
         </div>
-        <div className="lg:pl-8 w-[62%] font-popins">
+        <div className="pt-8 lg:pl-8 xs:w-full lg:w-[62%] font-popins">
           <p className="text-justify">
             Hi there! My name is <strong>Dhairya Vardhan Chauhan</strong>, and
             I'm currently pursuing a <strong>Bachelor of Technology</strong> at
@@ -89,43 +99,25 @@ const About = () => {
             className="inline-flex items-center text-blue hover:text-purple-800 transition-colors ease-in-out duration-300 mt-4"
           >
             <div className="flex items-center">
-              <LuDownload></LuDownload>
+              <LuDownload />
               <p className="pl-2">View Resume</p>
             </div>
           </a>
         </div>
       </div>
-      <div className="pt-[60px] flex justify-evenly">
-        <div className="flex flex-col items-center">
-          <div className="bg-blue text-white h-12 w-12 flex items-center justify-center rounded-full">
-            <BsSuitcaseLgFill className="font-extrabold text-[20px] flex-shrink-0"></BsSuitcaseLgFill>
+      <div className="pt-[60px] flex flex-wrap justify-between">
+        {details.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center flex-grow basis-1/4 pr-6 mb-6"
+          >
+            <div className="bg-blue text-white lg:h-12 lg:w-12 xs:h-8 xs:w-8 flex items-center justify-center rounded-full">
+              {item.icon}
+            </div>
+            <h2 className="xs:text-[9px] lg:text-3xl pt-2">{item.number}</h2>
+            <p className="xs:text-[9px] lg:text-xl text-center">{item.text}</p>
           </div>
-          <h2>{details[0].number}</h2>
-          <p>{details[0].text}</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <div className="bg-blue text-white h-12 w-12 flex items-center justify-center rounded-full">
-            <LuBraces className="font-extrabold text-[24px] flex-shrink-0"></LuBraces>
-          </div>
-          <h2>{details[1].number}</h2>
-          <p>{details[1].text}</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <div className="bg-blue text-white h-12 w-12 flex items-center justify-center rounded-full">
-            <IoNewspaperSharp className="font-extrabold text-[20px] flex-shrink-0"></IoNewspaperSharp>
-          </div>
-          <h2>{details[2].number}</h2>
-          <p>{details[2].text}</p>
-        </div>
-        <div className="flex flex-col items-center">
-          <div className="bg-blue text-white h-12 w-12 flex items-center justify-center rounded-full">
-            <GiAchievement className="font-extrabold text-[26px] flex-shrink-0"></GiAchievement>
-          </div>
-          <div className="flex flex-col items-center">
-            <h2>{details[3].number}</h2>
-            <p>{details[3].text}</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

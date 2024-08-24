@@ -1,23 +1,27 @@
-  import "./App.css";
+import "./App.css";
 import About from "./Components/About.jsx";
 import Home from "./Components/Home";
 import MobileNavBar from "./Components/MobileNavBar";
 import SideBar from "./Components/SideBar";
-  function App() {
-    return (
-      <div>
-        <SideBar/>
-        <MobileNavBar></MobileNavBar>
-        <section className="bgImage">
-          <Home></Home>
+import Skills from "./Components/Skills.jsx";
+function App() {
+  return (
+    <div>
+      <SideBar />
+      <MobileNavBar></MobileNavBar>
+      <section className="bgImage">
+        <Home></Home>
+      </section>
+      <section className="min-[0px]:pl-0 lg:pl-[150px]">
+        <section className="min-[0px]:pl-0 pt-[60px]">
+          <About></About>
         </section>
-        <section className="pl-[150px]">
-          <section className="pt-[60px]">
-            <About></About>
-          </section>
+        <section className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0">
+          <Skills></Skills>
         </section>
-      </div>
-    );
-  }
+      </section>
+    </div>
+  );
+}
 
-  export default App;
+export default App;
