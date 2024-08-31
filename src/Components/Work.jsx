@@ -1,12 +1,12 @@
 import EducationCarousel from "./EducationCarousel";
 import Headings from "./Headings";
 
-const Education = ({data}) => {
+const Work = ({data}) => {
   return (
     <>
-      <Headings>Education</Headings>
+      <Headings>Work</Headings>
       <EducationCarousel data={data}></EducationCarousel>
     </>
   );
 };
-export default Education;
+export default Work;
