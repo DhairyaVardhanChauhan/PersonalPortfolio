@@ -37,12 +37,19 @@ const workData = [
     imgAlt: "Zypp Electric",
     details: [
       { label: "Expertise", value: "BackEnd Developent" },
-      { label: "Task",value:"Working as a backend developer in Java, using industry-relevant technology such as Spring and Spring Boot."},
-      { label: "Achievement",value:"Performed Query optimization reducing the time of execution from 10s to 1s"}
+      {
+        label: "Task",
+        value:
+          "Working as a backend developer in Java, using industry-relevant technology such as Spring and Spring Boot.",
+      },
+      {
+        label: "Achievement",
+        value:
+          "Performed Query optimization reducing the time of execution from 10s to 1s",
+      },
     ],
   },
 ];
-
 
 function App() {
   return (
@@ -56,16 +63,28 @@ function App() {
         <section id="about" className="min-[0px]:pl-0 pt-[60px]">
           <About></About>
         </section>
-        <section id="skills" className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0">
-          <Skills ></Skills>
+        <section
+          id="skills"
+          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+        >
+          <Skills></Skills>
         </section>
-        <section id="education" className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0">
-          <Education  data = {educationData}></Education>
+        <section
+          id="education"
+          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+        >
+          <Education data={educationData}></Education>
         </section>
-        <section id="work" className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0">
-          <Work data = {workData}></Work>
+        <section
+          id="work"
+          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+        >
+          <Work data={workData}></Work>
         </section>
-        <section id="projects" className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0">
+        <section
+          id="projects"
+          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+        >
           <Projects></Projects>
         </section>
       </section>

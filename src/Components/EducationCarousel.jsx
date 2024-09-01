@@ -20,7 +20,7 @@ const EducationCarousel = ({ data }) => {
       >
         {data.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col bg-white/20 backdrop-blur-lg shadow-lg rounded-t-none rounded-2xl overflow-hidden min-w-[100%] xs:min-w-[95%] md:min-w-[90%] lg:min-w-[70%] border border-white/30">
+            <div className="flex flex-col bg-white/20 backdrop-blur-lg shadow-lg rounded-t-none rounded-2xl overflow-hidden min-w-[100%] xs:min-w-[95%] md:min-w-[90%] lg:min-w-[70%] border border-white/30 max-w-[50%]">
               <div className="flex items-center justify-center p-3 xs:p-4 md:p-6 bg-gray-100/20 pb-0">
                 <img
                   className="object-cover rounded-lg shadow-md w-full h-auto max-w-[300px]"
@@ -30,7 +30,10 @@ const EducationCarousel = ({ data }) => {
               </div>
               <div className="p-3 xs:p-4 md:p-6 pt-0">
                 <div className="flex items-center justify-center">
-                  <SubHeading isBlack={true} className="text-sm xs:text-base md:text-lg lg:text-xl font-semibold">
+                  <SubHeading
+                    isBlack={true}
+                    className="text-sm xs:text-base md:text-lg lg:text-xl font-semibold"
+                  >
                     {item.heading}
                   </SubHeading>
                 </div>

@@ -1,10 +1,10 @@
 import EducationCarousel from "./EducationCarousel";
 import Headings from "./Headings";
 
-const Work = ({data}) => {
+const Work = ({ data }) => {
   return (
     <>
-      <Headings>Work</Headings>
+      <Headings>Work Experience</Headings>
       <EducationCarousel data={data}></EducationCarousel>
     </>
   );
