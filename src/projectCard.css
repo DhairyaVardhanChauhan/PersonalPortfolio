@@ -62,7 +62,7 @@ article.card .thumb {
 
 article.card .infos {
   position: relative;
-  padding: 14px 24px;
+  padding: 14px 14px;
   background: #fff;
   transition: 0.4s cubic-bezier(0.17, 0.67, 0.5, 1.03);
 }

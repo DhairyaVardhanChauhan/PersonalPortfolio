@@ -7,6 +7,7 @@ import Projects from "./Components/Projects.jsx";
 import SideBar from "./Components/SideBar";
 import Skills from "./Components/Skills.jsx";
 import Work from "./Components/Work.jsx";
+import Achievements from "./Components/Achievements.jsx";
 
 const educationData = [
   {
@@ -86,6 +87,12 @@ function App() {
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
           <Projects></Projects>
+        </section>
+        <section
+          id="achievements"
+          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+        >
+          <Achievements></Achievements>
         </section>
       </section>
     </div>

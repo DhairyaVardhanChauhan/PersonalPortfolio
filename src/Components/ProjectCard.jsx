@@ -30,7 +30,7 @@ const ProjectCard = ({ heading, cardContent, skills, link, cardImage }) => {
               link={skill.link}
               toolTipName={skill.toolTipName}
               logoSize={skill.logoSize}
-              className="mt-2 h-[3rem] w-[3rem] pointer-events-none mr-2"
+              className="mt-2 h-[3rem] w-[3rem] pointer-events-none mr-3"
             />
           ))}
         </div>
