@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import About from "./Components/About.jsx";
 import Education from "./Components/Education.jsx";
@@ -56,43 +57,43 @@ function App() {
   return (
     <div>
       <SideBar />
-      <MobileNavBar></MobileNavBar>
+      <MobileNavBar />
       <section id="home" className="bgImage">
-        <Home></Home>
+        <Home />
       </section>
       <section className="min-[0px]:pl-0 lg:pl-[150px]">
         <section id="about" className="min-[0px]:pl-0 pt-[60px]">
-          <About></About>
+          <About />
         </section>
         <section
           id="skills"
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
-          <Skills></Skills>
+          <Skills />
         </section>
         <section
           id="education"
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
-          <Education data={educationData}></Education>
+          <Education data={educationData} />
         </section>
         <section
           id="work"
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
-          <Work data={workData}></Work>
+          <Work data={workData} />
         </section>
         <section
           id="projects"
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
-          <Projects></Projects>
+          <Projects />
         </section>
         <section
           id="achievements"
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
-          <Achievements></Achievements>
+          <Achievements />
         </section>
       </section>
     </div>

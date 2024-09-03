@@ -1,7 +1,7 @@
 import ProjectCard from "./ProjectCard";
 import Headings from "./Headings";
 
-export const projectsData = [
+const projectsData = [
   {
     heading: "Sorting Visualizer",
     cardContent:
