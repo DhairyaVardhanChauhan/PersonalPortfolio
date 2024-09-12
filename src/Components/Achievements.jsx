@@ -1,17 +1,16 @@
 import React from "react";
+import { AiFillStar } from "react-icons/ai";
+import { BiGitBranch } from "react-icons/bi";
+import { HiOutlineTrophy } from "react-icons/hi2";
+import { IoCodeSlash } from "react-icons/io5";
+import { LuMail } from "react-icons/lu";
+import { MdCastForEducation, MdOutlinePersonOutline } from "react-icons/md";
+import { TbBriefcase } from "react-icons/tb";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { MdOutlinePersonOutline } from "react-icons/md";
-import { IoCodeSlash } from "react-icons/io5";
-import { BiGitBranch } from "react-icons/bi";
-import { HiOutlineTrophy } from "react-icons/hi2";
-import { TbBriefcase } from "react-icons/tb";
-import { MdCastForEducation } from "react-icons/md";
-import { LuMail } from "react-icons/lu";
-import { AiFillStar } from "react-icons/ai"; // For the final star icon
 import Headings from "./Headings";
 
 const Achievements = () => {

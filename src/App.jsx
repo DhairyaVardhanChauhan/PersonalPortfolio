@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import About from "./Components/About.jsx";
+import Achievements from "./Components/Achievements.jsx";
+import Contact from "./Components/Contact.jsx";
 import Education from "./Components/Education.jsx";
 import Home from "./Components/Home";
 import MobileNavBar from "./Components/MobileNavBar";
@@ -8,7 +10,6 @@ import Projects from "./Components/Projects.jsx";
 import SideBar from "./Components/SideBar";
 import Skills from "./Components/Skills.jsx";
 import Work from "./Components/Work.jsx";
-import Achievements from "./Components/Achievements.jsx";
 
 const educationData = [
   {
@@ -51,7 +52,24 @@ const workData = [
       },
     ],
   },
+  {
+    heading: "ANOTHER CITY | 2023-2024",
+    imgSrc: "/education/another_company.png",
+    imgAlt: "Another Company",
+    details: [
+      { label: "Expertise", value: "FrontEnd Development" },
+      {
+        label: "Task",
+        value: "Working on frontend development using React and Tailwind CSS.",
+      },
+      {
+        label: "Achievement",
+        value: "Led the redesign of the company’s main web application.",
+      },
+    ],
+  },
 ];
+
 
 function App() {
   return (
@@ -94,6 +112,12 @@ function App() {
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
           <Achievements />
+        </section>
+        <section
+          id="contact"
+          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+        >
+          <Contact/>
         </section>
       </section>
     </div>

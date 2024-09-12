@@ -1,12 +1,9 @@
 import React from "react";
+import "swiper/css";
+import "swiper/css/effect-cards";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SubHeading from "./SubHeading";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-cards";
-
-// Import required modules
 import { EffectCards } from "swiper/modules";
 
 const EducationCarousel = ({ data }) => {

@@ -10,7 +10,7 @@ export const truncateText = (text, maxLength) => {
 };
 
 const ProjectCard = ({ heading, cardContent, skills, link, cardImage }) => {
-  const MAX_SKILLS_ALLOWED = 10;
+  const MAX_SKILLS_ALLOWED = 8;
   const truncatedSkills = skills.slice(0, MAX_SKILLS_ALLOWED);
 
   const maxLength = 195;

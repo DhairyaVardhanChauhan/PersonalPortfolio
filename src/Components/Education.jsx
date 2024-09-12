@@ -1,11 +1,10 @@
-import EducationCarousel from "./EducationCarousel";
+import EducationSecond from "./EducationSecond";
 import Headings from "./Headings";
-
 const Education = ({data}) => {
   return (
     <>
       <Headings>Education</Headings>
-      <EducationCarousel data={data}></EducationCarousel>
+      <EducationSecond data={data}></EducationSecond>
     </>
   );
 };

@@ -1,5 +1,5 @@
-import ProjectCard from "./ProjectCard";
 import Headings from "./Headings";
+import ProjectCard from "./ProjectCard";
 
 const projectsData = [
   {
