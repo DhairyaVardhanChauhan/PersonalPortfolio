@@ -144,9 +144,15 @@ const About = () => {
             <div className="bg-blue text-white lg:h-12 lg:w-12 xs:h-8 xs:w-8 flex items-center justify-center rounded-full">
               {item.icon}
             </div>
-            {/* Number Animation */}
             <h2 className="xs:text-[9px] lg:text-3xl pt-2">
-              <CountUp start={0} end={item.number} duration={2} delay={0.5} />
+              <CountUp
+                start={0}
+                end={item.number}
+                duration={2}
+                delay={0.5}
+                enableScrollSpy={true}
+                scrollSpyOnce={true}
+              />
             </h2>
             <p className="xs:text-[9px] lg:text-xl text-center">{item.text}</p>
           </div>

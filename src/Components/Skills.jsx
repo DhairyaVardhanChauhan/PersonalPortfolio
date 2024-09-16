@@ -1,6 +1,7 @@
 import Headings from "./Headings";
 import SubHeading from "./SubHeading";
 import SkillHolder from "./SkillHolder.jsx";
+import { motion } from "framer-motion";
 
 const skillData = [
   { toolTipName: "C++", link: "/skills/c.png", logoSize: "h-10 w-10" },
@@ -45,7 +46,12 @@ const Skills = () => {
   return (
     <>
       <Headings>Skills</Headings>
-      <div>
+      <motion.div
+        initial={{ scale: 0.5 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }} // Smooth entrance
+        viewport={{ once: true }}
+      >
         <SubHeading>CORE</SubHeading>
         <div className="flex flex-wrap gap-4">
           {skillData.map((skill, index) => (
@@ -79,7 +85,7 @@ const Skills = () => {
             />
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
