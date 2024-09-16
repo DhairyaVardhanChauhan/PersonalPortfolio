@@ -67,7 +67,7 @@ const projectsData = [
   },
   {
     heading: "Palette Portal",
-    cardImage: "bg-[url('/projectImages/palette.gif')]",
+    cardImage: "bg-[url('/projectImages/palette2.gif')]",
     cardContent:
       "Explore a curated collection of contemporary and classic art in our virtual gallery. View, learn, and purchase pieces from talented artists worldwide, all from the comfort of home.",
     skills: [

@@ -26,15 +26,17 @@ const EducationSecond = ({ data }) => {
               src={item.imgSrc}
               alt={item.imgAlt}
             />
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            <h2 className="xs:text-lg lg:text-2xl font-bold text-gray-800 mb-2">
               {item.heading}
             </h2>
             <div className="flex items-start justify-start font-popins">
               <ul className="text-left text-gray-600 space-y-1">
                 {item.details.map((detail, detailIndex) => (
                   <li key={detailIndex} className="flex pb-2">
-                    <span className="font-bold">{detail.label}:&nbsp;</span>
-                    <span>{detail.value}</span>
+                    <span className="font-bold">
+                      {detail.label}:&nbsp;
+                      <span className="font-normal">{detail.value}</span>
+                    </span>
                   </li>
                 ))}
               </ul>

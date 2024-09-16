@@ -175,17 +175,16 @@ h1 {
 }
 
 .slick-dots li button::before {
-  content: '';
+  content: "";
   width: 10px;
   height: 10px;
   background-color: transparent;
-  border: 1px solid blue; 
-  border-radius: 50%; 
+  border: 1px solid blue;
+  border-radius: 50%;
   display: block;
   transition: all 0.3s;
 }
 
 .slick-dots li.slick-active button::before {
-  background-color: blue; 
+  background-color: blue;
 }
-

@@ -10,6 +10,8 @@ import Projects from "./Components/Projects.jsx";
 import SideBar from "./Components/SideBar";
 import Skills from "./Components/Skills.jsx";
 import Work from "./Components/Work.jsx";
+import Footer from "./Components/Footer.jsx"; // Import Footer
+import { motion } from "framer-motion";
 
 const educationData = [
   {
@@ -70,10 +72,9 @@ const workData = [
   },
 ];
 
-
 function App() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <SideBar />
       <MobileNavBar />
       <section id="home" className="bgImage">
@@ -108,7 +109,7 @@ function App() {
           <Projects />
         </section>
         <section
-          id="achievements"
+          id="achievement"
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
           <Achievements />
@@ -117,9 +118,10 @@ function App() {
           id="contact"
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
-          <Contact/>
+          <Contact />
         </section>
       </section>
+      <Footer />
     </div>
   );
 }

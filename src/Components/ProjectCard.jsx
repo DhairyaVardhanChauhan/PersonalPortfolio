@@ -22,15 +22,15 @@ const ProjectCard = ({ heading, cardContent, skills, link, cardImage }) => {
         className={`thumb ${cardImage} bg-no-repeat bg-center bg-cover`}
       ></div>
       <div className="infos">
-        <h2 className="title">{heading}</h2>
-        <div className="skills-container flex flex-wrap h-14 overflow-hidden transition-all delay-300 ease-in-out justify-start">
+        <h2 className="title text-center">{heading}</h2>
+        <div className="skills-container flex flex-wrap h-14 overflow-hidden transition-all delay-300 ease-in-out justify-start xs:hidden md:flex">
           {truncatedSkills.map((skill, index) => (
             <SkillHolder
               key={index}
               link={skill.link}
               toolTipName={skill.toolTipName}
               logoSize={skill.logoSize}
-              className="mt-2 h-[3rem] w-[3rem] pointer-events-none mr-2"
+              className="mt-2 h-[3rem] w-[3rem] pointer-events-none mr-3"
             />
           ))}
         </div>

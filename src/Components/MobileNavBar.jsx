@@ -11,7 +11,9 @@ const MobileNavBar = () => {
   }
 
   return (
-    <div className={`fixed cursor-pointer z-50 flex right-5 top-5 min-[0px]:block lg:hidden`}>
+    <div
+      className={`fixed cursor-pointer z-50 flex right-5 top-5 min-[0px]:block lg:hidden`}
+    >
       <button
         className={`relative z-50 p-0 transition-all duration-300 ${
           isOpen ? "bg-blue rounded-full" : "bg-transparent"

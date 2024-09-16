@@ -32,7 +32,7 @@ const SideBar = () => {
     {
       text: "Achievements",
       icon: <HiOutlineTrophy />,
-      elementId: "achievements",
+      elementId: "achievement",
     },
     { text: "Contact", icon: <LuMail />, elementId: "contact" },
   ];
