@@ -1,7 +1,6 @@
 import React from "react";
 import Headings from "./Headings";
 import ReachOut from "./ReachOut";
-
 const Contact = () => {
   return (
     <>

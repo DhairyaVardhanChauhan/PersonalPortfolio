@@ -11,8 +11,7 @@ import SideBar from "./Components/SideBar";
 import Skills from "./Components/Skills.jsx";
 import Work from "./Components/Work.jsx";
 import Footer from "./Components/Footer.jsx"; // Import Footer
-import { motion } from "framer-motion";
-
+import Hobbies from "./Components/Hobbies.jsx";
 const educationData = [
   {
     heading: "GURUGRAM | 2014-2021",
@@ -113,6 +112,7 @@ function App() {
           className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
         >
           <Achievements />
+          <Hobbies></Hobbies>
         </section>
         <section
           id="contact"

@@ -46,13 +46,13 @@ const Skills = () => {
   return (
     <>
       <Headings>Skills</Headings>
+      <SubHeading>CORE</SubHeading>
       <motion.div
         initial={{ scale: 0.5 }}
         whileInView={{ scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }} // Smooth entrance
         viewport={{ once: true }}
       >
-        <SubHeading>CORE</SubHeading>
         <div className="flex flex-wrap gap-4">
           {skillData.map((skill, index) => (
             <SkillHolder
@@ -63,7 +63,14 @@ const Skills = () => {
             />
           ))}
         </div>
-        <SubHeading>DATABASES</SubHeading>
+      </motion.div>
+      <SubHeading>DATABASES</SubHeading>
+      <motion.div
+        initial={{ scale: 0.5 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }} // Smooth entrance
+        viewport={{ once: true }}
+      >
         <div className="flex flex-wrap gap-4">
           {dataBases.map((skill, index) => (
             <SkillHolder
@@ -74,7 +81,14 @@ const Skills = () => {
             />
           ))}
         </div>
-        <SubHeading>OPERATING SYSTEMS</SubHeading>
+      </motion.div>
+      <SubHeading>OPERATING SYSTEMS</SubHeading>
+      <motion.div
+        initial={{ scale: 0.5 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }} // Smooth entrance
+        viewport={{ once: true }}
+      >
         <div className="flex flex-wrap gap-4">
           {operatingSystems.map((skill, index) => (
             <SkillHolder
