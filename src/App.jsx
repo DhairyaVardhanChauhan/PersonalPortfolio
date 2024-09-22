@@ -12,6 +12,7 @@ import Skills from "./Components/Skills.jsx";
 import Work from "./Components/Work.jsx";
 import Footer from "./Components/Footer.jsx"; // Import Footer
 import Hobbies from "./Components/Hobbies.jsx";
+import AnimatedCursor from "react-animated-cursor";
 const educationData = [
   {
     heading: "GURUGRAM | 2014-2021",
@@ -74,6 +75,16 @@ const workData = [
 function App() {
   return (
     <div className="overflow-hidden">
+      {/* <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        color="0, 0, 0"
+        outerAlpha={0.5}
+        innerScale={1}
+        outerScale={1.7}
+        outerStyle={{ border: "2px solid black" }}
+      /> */}
+
       <SideBar />
       <MobileNavBar />
       <section id="home" className="bgImage">

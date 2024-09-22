@@ -40,13 +40,7 @@ const details = [
 
 const About = () => {
   return (
-    <motion.div
-      className="ml-0 mr-0 xs:ml-10 xs:mr-10 lg:ml-0 lg:mr-0"
-      initial={{ opacity: 0, y: 50 }} // Initially hidden and pushed down
-      whileInView={{ opacity: 1, y: 0 }} // Animate when in view
-      transition={{ duration: 1, ease: "easeOut" }} // Smooth entrance
-      viewport={{ once: true }} // Trigger animation only once
-    >
+    <motion.div>
       <Headings>About</Headings>
 
       <div className="flex lg:flex-row min-[0px]:flex-col mt-[60px]">
