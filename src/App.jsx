@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import About from "./Components/About.jsx";
 import Achievements from "./Components/Achievements.jsx";
@@ -10,9 +10,10 @@ import Projects from "./Components/Projects.jsx";
 import SideBar from "./Components/SideBar";
 import Skills from "./Components/Skills.jsx";
 import Work from "./Components/Work.jsx";
-import Footer from "./Components/Footer.jsx"; // Import Footer
+import Footer from "./Components/Footer.jsx";
 import Hobbies from "./Components/Hobbies.jsx";
-import AnimatedCursor from "react-animated-cursor";
+import Loader from "./Components/Loader"; // Import your Loader component
+
 const educationData = [
   {
     heading: "GURUGRAM | 2014-2021",
@@ -41,7 +42,7 @@ const workData = [
     imgSrc: "/education/zypp_logo.png",
     imgAlt: "Zypp Electric",
     details: [
-      { label: "Expertise", value: "BackEnd Developent" },
+      { label: "Expertise", value: "BackEnd Development" },
       {
         label: "Task",
         value:
@@ -72,67 +73,85 @@ const workData = [
   },
 ];
 
+const fetchData = async (setIsLoading) => {
+  setIsLoading(true);
+  try {
+    const response = await fetch("http://localhost:5173");
+    const data = await response.json();
+    // Handle your data
+    console.log(data); // or update your state with this data
+  } catch (error) {
+    // Handle the error
+    console.error("Error fetching data:", error);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch data when the component mounts
+    fetchData(setIsLoading);
+  }, []);
+
   return (
     <div className="overflow-hidden">
-      {/* <AnimatedCursor
-        innerSize={8}
-        outerSize={35}
-        color="0, 0, 0"
-        outerAlpha={0.5}
-        innerScale={1}
-        outerScale={1.7}
-        outerStyle={{ border: "2px solid black" }}
-      /> */}
-
-      <SideBar />
-      <MobileNavBar />
-      <section id="home" className="bgImage">
-        <Home />
-      </section>
-      <section className="min-[0px]:pl-0 lg:pl-[150px]">
-        <section id="about" className="min-[0px]:pl-0 pt-[60px]">
-          <About />
-        </section>
-        <section
-          id="skills"
-          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-        >
-          <Skills />
-        </section>
-        <section
-          id="education"
-          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-        >
-          <Education data={educationData} />
-        </section>
-        <section
-          id="work"
-          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-        >
-          <Work data={workData} />
-        </section>
-        <section
-          id="projects"
-          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-        >
-          <Projects />
-        </section>
-        <section
-          id="achievement"
-          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-        >
-          <Achievements />
-          <Hobbies></Hobbies>
-        </section>
-        <section
-          id="contact"
-          className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-        >
-          <Contact />
-        </section>
-      </section>
-      <Footer />
+      {isLoading ? (
+        <Loader /> // Show loader while data is being fetched
+      ) : (
+        <>
+          <SideBar />
+          <MobileNavBar />
+          <section id="home" className="bgImage">
+            <Home />
+          </section>
+          <section className="min-[0px]:pl-0 lg:pl-[150px]">
+            <section id="about" className="min-[0px]:pl-0 pt-[60px]">
+              <About />
+            </section>
+            <section
+              id="skills"
+              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+            >
+              <Skills />
+            </section>
+            <section
+              id="education"
+              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+            >
+              <Education data={educationData} />
+            </section>
+            <section
+              id="work"
+              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+            >
+              <Work data={workData} />
+            </section>
+            <section
+              id="projects"
+              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+            >
+              <Projects />
+            </section>
+            <section
+              id="achievements"
+              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+            >
+              <Achievements />
+              <Hobbies />
+            </section>
+            <section
+              id="contact"
+              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+            >
+              <Contact />
+            </section>
+          </section>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

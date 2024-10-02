@@ -4,9 +4,7 @@ import { FaLinkedin, FaGithub, FaCode } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="flex justify-start items-center flex-col py-4 bg-gray-100 ">
-      <h2 className="lg:text-4xl font-bold mb-4 text-center xs:text-2xl">
-        Dhairya Vardhan Chauhan
-      </h2>
+      {" "}
       <p className="text-gray-600 text-lg mb-4">
         Software Developer | Full Stack Enthusiast
       </p>

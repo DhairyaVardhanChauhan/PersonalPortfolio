@@ -32,7 +32,7 @@ const SideBar = () => {
     {
       text: "Achievements",
       icon: <HiOutlineTrophy />,
-      elementId: "achievement",
+      elementId: "achievements",
     },
     { text: "Contact", icon: <LuMail />, elementId: "contact" },
   ];
@@ -52,13 +52,17 @@ const SideBar = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = sections.findIndex(
-              (section) => section.id === entry.target.id
+              (section) => section && section.id === entry.target.id
             );
             setIsActive(index);
           }
         });
       },
-      { threshold: 0.6 }
+      {
+        threshold: sections.map((section) =>
+          section?.id === "achievements" ? 0.3 : 0.6
+        ),
+      }
     );
 
     sections.forEach((section) => {
@@ -70,7 +74,7 @@ const SideBar = () => {
         if (section) observer.unobserve(section);
       });
     };
-  }, []);
+  }, [icons]);
 
   return (
     <div className="flex flex-col fixed top-0 left-0 h-full justify-center p-2 z-50 min-[0px]:hidden lg:flex">

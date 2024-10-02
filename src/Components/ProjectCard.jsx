@@ -21,7 +21,7 @@ const ProjectCard = ({ heading, cardContent, skills, link, cardImage }) => {
       <div
         className={`thumb ${cardImage} bg-no-repeat bg-center bg-cover`}
       ></div>
-      <div className="infos">
+      <div className="infos min-h-96">
         <h2 className="title text-center">{heading}</h2>
         <div className="skills-container flex flex-wrap h-14 overflow-hidden transition-all delay-300 ease-in-out justify-start xs:hidden md:flex">
           {truncatedSkills.map((skill, index) => (
@@ -34,7 +34,9 @@ const ProjectCard = ({ heading, cardContent, skills, link, cardImage }) => {
             />
           ))}
         </div>
-        <p className="txt pt-2 font-popins">{truncatedContent}</p>
+        <div>
+          <p className="txt pt-2 font-popins">{truncatedContent}</p>
+        </div>
         <a href={`${link}`} target="_blank" className="text-blue">
           View Source
         </a>

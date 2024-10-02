@@ -55,10 +55,10 @@ const Projects = () => {
         {projectsData.map((project, index) => (
           <motion.div
             key={index}
-            initial={{ y: -50, rotate: 5 }} // Start slightly above and rotated
+            initial={{ y: -50, rotate: 0 }} // Start slightly above and rotated
             whileInView={{
               y: [0, 10, -10, 0], // Smooth drop and shake effect
-              rotate: [5, 0, -5, 0], // Smooth shake
+              rotate: [0, 5, -5, 0], // Smooth shake
               transition: {
                 duration: 0.75, // Increase duration for smoother transitions
                 times: [0, 0.3, 0.7, 1], // More spaced-out keyframes

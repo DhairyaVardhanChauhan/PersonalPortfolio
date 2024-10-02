@@ -27,6 +27,9 @@ export default {
         "custom-gradient":
           "linear-gradient(to right, #B5C0D0 0%, #B5C0D0 50%, #E1E6EA 50%, #E1E6EA 100%)",
       },
+      animation: {
+        "spin-fast": "spin 0.75s linear infinite", // Adjust the duration as needed
+      },
     },
   },
   plugins: [],
