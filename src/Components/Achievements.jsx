@@ -24,6 +24,7 @@ const Achievements = () => {
             contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
             date="2011 - present"
+            dateClassName="text-black"
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             icon={<TbBriefcase />}
           >

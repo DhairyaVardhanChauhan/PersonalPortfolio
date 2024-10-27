@@ -12,7 +12,7 @@ import Skills from "./Components/Skills.jsx";
 import Work from "./Components/Work.jsx";
 import Footer from "./Components/Footer.jsx";
 import Hobbies from "./Components/Hobbies.jsx";
-import Loader from "./Components/Loader"; // Import your Loader component
+import Loader from "./Components/Loader";
 
 const educationData = [
   {
@@ -78,10 +78,8 @@ const fetchData = async (setIsLoading) => {
   try {
     const response = await fetch("http://localhost:5173");
     const data = await response.json();
-    // Handle your data
-    console.log(data); // or update your state with this data
+    console.log(data);
   } catch (error) {
-    // Handle the error
     console.error("Error fetching data:", error);
   } finally {
     setIsLoading(false);
@@ -92,14 +90,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch data when the component mounts
     fetchData(setIsLoading);
   }, []);
 
   return (
     <div className="overflow-hidden">
       {isLoading ? (
-        <Loader /> // Show loader while data is being fetched
+        <Loader />
       ) : (
         <>
           <SideBar />
@@ -107,45 +104,30 @@ function App() {
           <section id="home" className="bgImage">
             <Home />
           </section>
-          <section className="min-[0px]:pl-0 lg:pl-[150px]">
-            <section id="about" className="min-[0px]:pl-0 pt-[60px]">
+          <section className="xs:pl-2 xs:pr-2 lg:pl-[150px]">
+            <section id="about" className="xs:pl-2 xs:pr-2 pt-[60px]">
               <About />
             </section>
-            <section
-              id="skills"
-              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-            >
+            <section id="skills" className="xs:pl-2 xs:pr-2 pt-[60px] ml-10">
               <Skills />
             </section>
-            <section
-              id="education"
-              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-            >
+            <section id="education" className="xs:pl-2 xs:pr-2 pt-[60px] ml-10">
               <Education data={educationData} />
             </section>
-            <section
-              id="work"
-              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-            >
+            <section id="work" className="xs:pl-2 xs:pr-2 pt-[60px] ml-10">
               <Work data={workData} />
             </section>
-            <section
-              id="projects"
-              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-            >
+            <section id="projects" className="xs:pl-2 xs:pr-2 pt-[60px] ml-10">
               <Projects />
             </section>
             <section
               id="achievements"
-              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
+              className="xs:pl-2 xs:pr-2 pt-[60px] ml-10"
             >
               <Achievements />
               <Hobbies />
             </section>
-            <section
-              id="contact"
-              className="min-[0px]:pl-0 pt-[60px] xs:ml-10 lg:ml-0"
-            >
+            <section id="contact" className="xs:pl-2 xs:pr-2 pt-[60px] ml-10">
               <Contact />
             </section>
           </section>

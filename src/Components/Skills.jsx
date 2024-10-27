@@ -50,7 +50,7 @@ const Skills = () => {
       <motion.div
         initial={{ scale: 0.5 }}
         whileInView={{ scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }} // Smooth entrance
+        transition={{ duration: 1, ease: "easeOut" }} 
         viewport={{ once: true }}
       >
         <div className="flex flex-wrap gap-4">
@@ -68,7 +68,7 @@ const Skills = () => {
       <motion.div
         initial={{ scale: 0.5 }}
         whileInView={{ scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }} // Smooth entrance
+        transition={{ duration: 1, ease: "easeOut" }} 
         viewport={{ once: true }}
       >
         <div className="flex flex-wrap gap-4">
@@ -86,7 +86,7 @@ const Skills = () => {
       <motion.div
         initial={{ scale: 0.5 }}
         whileInView={{ scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }} // Smooth entrance
+        transition={{ duration: 1, ease: "easeOut" }} 
         viewport={{ once: true }}
       >
         <div className="flex flex-wrap gap-4">
