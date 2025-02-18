@@ -56,18 +56,20 @@ const workData = [
     ],
   },
   {
-    heading: "ANOTHER CITY | 2023-2024",
-    imgSrc: "/education/another_company.png",
-    imgAlt: "Another Company",
+    heading: "GURUGRAM | 2024-Present",
+    imgSrc: "/education/zypp_logo.png",
+    imgAlt: "Zypp Electric",
     details: [
-      { label: "Expertise", value: "FrontEnd Development" },
+      { label: "Expertise", value: "BackEnd Development" },
       {
         label: "Task",
-        value: "Working on frontend development using React and Tailwind CSS.",
+        value:
+          "Working as a backend developer in Java, using industry-relevant technology such as Spring and Spring Boot.",
       },
       {
         label: "Achievement",
-        value: "Led the redesign of the company’s main web application.",
+        value:
+          "Performed Query optimization reducing the time of execution from 10s to 1s",
       },
     ],
   },
@@ -124,7 +126,7 @@ function App() {
               id="achievements"
               className="xs:pl-2 xs:pr-2 pt-[60px] ml-10"
             >
-              <Achievements />
+              {/* <Achievements /> */}
               <Hobbies />
             </section>
             <section id="contact" className="xs:pl-2 xs:pr-2 pt-[60px] ml-10">

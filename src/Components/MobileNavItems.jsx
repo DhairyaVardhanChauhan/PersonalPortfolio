@@ -54,12 +54,12 @@ const MobileNavItems = ({ isOpen }) => {
       icon: <BiGitBranch className="hover-white" />,
       elementId: "projects",
     },
-    {
-      id: 6,
-      text: "Achievements",
-      icon: <HiOutlineTrophy className="hover-white" />,
-      elementId: "achievements",
-    },
+    // {
+    //   id: 6,
+    //   text: "Achievements",
+    //   icon: <HiOutlineTrophy className="hover-white" />,
+    //   elementId: "achievements",
+    // },
     {
       id: 7,
       text: "Contact",

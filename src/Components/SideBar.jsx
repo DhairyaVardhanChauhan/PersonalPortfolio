@@ -29,11 +29,11 @@ const SideBar = () => {
       elementId: "work",
     },
     { text: "Projects", icon: <BiGitBranch />, elementId: "projects" },
-    {
-      text: "Achievements",
-      icon: <HiOutlineTrophy />,
-      elementId: "achievements",
-    },
+    // {
+    //   text: "Achievements",
+    //   icon: <HiOutlineTrophy />,
+    //   elementId: "achievements",
+    // },
     { text: "Contact", icon: <LuMail />, elementId: "contact" },
   ];
 
