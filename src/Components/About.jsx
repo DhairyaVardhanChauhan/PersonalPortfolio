@@ -52,7 +52,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <img
-            src="portfolio-img1.jpeg"
+            src="Me2.jpg"
             alt="Profile"
             className="object-cover rounded-lg lg:h-[27rem] w-full"
           />
