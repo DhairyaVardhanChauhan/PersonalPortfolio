@@ -78,7 +78,7 @@ const About = () => {
           <p className="text-justify">
             I've recently dived deep into problem-solving on{" "}
             <strong>LeetCode</strong>, where I have solved over{" "}
-            <strong>920+ problems</strong> and participated in more than{" "}
+            <strong>1200+ problems</strong> and participated in more than{" "}
             <strong>50 contests</strong>, achieving a top{" "}
             <strong>5% ranking</strong> with a best rating of{" "}
             <strong>1855</strong>. My dedication to improving my algorithmic
