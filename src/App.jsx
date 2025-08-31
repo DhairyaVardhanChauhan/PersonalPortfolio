@@ -104,7 +104,9 @@ function App() {
         <>
           <SideBar />
           <MobileNavBar />
-          <MusicPlayer></MusicPlayer>
+          <div className="hidden lg:block">
+              <MusicPlayer />
+            </div>
           <section id="home" className="bgImage">
             <Home />
           </section>
