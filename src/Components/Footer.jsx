@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLinkedin, FaGithub, FaCode } from "react-icons/fa";
+import { SiSubstack } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -32,6 +33,14 @@ const Footer = () => {
           className="transition-transform duration-300 hover:scale-110"
         >
           <FaCode className="text-yellow-400 w-6 h-6 hover:text-yellow-500" />
+        </a>
+                <a
+          href="https://memoizethebackend.substack.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="transition-transform duration-300 hover:scale-110"
+        >
+          <SiSubstack className="text-orange-400 w-5 h-5 hover:text-orange-500" />
         </a>
       </div>
       <hr className="w-full text-black" />

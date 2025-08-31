@@ -3,6 +3,7 @@ import { FaYoutube } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { GrLinkedin } from "react-icons/gr";
 import { SiLeetcode } from "react-icons/si";
+import { SiSubstack } from "react-icons/si";
 
 const Profiles = () => {
   const links = [
@@ -10,6 +11,7 @@ const Profiles = () => {
     "https://github.com/DhairyaVardhanChauhan",
     "https://leetcode.com/u/Dhairya_Vardhan_Chauhan/",
     "https://www.youtube.com/@dhairyachauhan6622",
+    "https://memoizethebackend.substack.com/"
   ];
 
   return (
@@ -37,6 +39,11 @@ const Profiles = () => {
         <FaYoutube
           className={`text-[#45505b] font-extrabold text-[24px] cursor-pointer hover:text-red-600 transition-colors ease-in-out duration-300 hover:scale-110`}
         ></FaYoutube>
+      </a>
+      <a href={links[4]} target="_blank" className="flex-shrink-0">
+        <SiSubstack 
+          className={`text-[#45505b] font-extrabold text-[18px] cursor-pointer hover:text-orange-400 transition-colors ease-in-out duration-300 hover:scale-110`}
+        ></SiSubstack >
       </a>
     </div>
   );
