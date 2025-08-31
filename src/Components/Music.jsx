@@ -173,8 +173,8 @@ const AudioPlayerVisualizer = () => {
 
         {/* Song Info */}
         <div className="w-64 bg-white/10 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/20 text-center mb-2">
-          <h3 className="text-white font-semibold text-sm truncate">{songsList[currentSongIndex].title}</h3>
-          <p className="text-white/70 text-xs truncate">{songsList[currentSongIndex].artist}</p>
+          <h3 className="text-black font-semibold text-sm truncate">{songsList[currentSongIndex].title}</h3>
+          <p className="text-black/70 text-xs truncate">{songsList[currentSongIndex].artist}</p>
         </div>
 
         {/* Controls */}
