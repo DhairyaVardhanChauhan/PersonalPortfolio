@@ -13,6 +13,7 @@ import Work from "./Components/Work.jsx";
 import Footer from "./Components/Footer.jsx";
 import Hobbies from "./Components/Hobbies.jsx";
 import Loader from "./Components/Loader";
+import MusicPlayer from "./Components/Music.jsx";
 
 const educationData = [
   {
@@ -103,6 +104,7 @@ function App() {
         <>
           <SideBar />
           <MobileNavBar />
+          <MusicPlayer></MusicPlayer>
           <section id="home" className="bgImage">
             <Home />
           </section>
