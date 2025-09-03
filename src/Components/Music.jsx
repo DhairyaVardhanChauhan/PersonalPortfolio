@@ -17,9 +17,10 @@ const songsList = [
   { src: "/gow.mp3", title: "God of War Holding On", artist: "Various Artists" },
 ];
 
-// Enhanced Heart Animation Component
+// Enhanced Heart Animation Component with improved visuals
 const HeartAnimation = ({ isBroken, isPlaying }) => {
   const [beatPhase, setBeatPhase] = useState(0);
+  const [glowIntensity, setGlowIntensity] = useState(0);
 
   // Create rhythmic beating effect when playing
   useEffect(() => {
@@ -27,153 +28,184 @@ const HeartAnimation = ({ isBroken, isPlaying }) => {
     
     const interval = setInterval(() => {
       setBeatPhase(prev => (prev + 1) % 4);
-    }, 150); // Adjust speed for rhythm
+      setGlowIntensity(prev => (prev + 1) % 3);
+    }, 120); // Slightly faster rhythm
 
     return () => clearInterval(interval);
   }, [isPlaying]);
 
-  return (
-    <div className="flex space-x-8 justify-center items-center mt-4 mb-2">
-      {!isBroken ? (
-        <>
-          {/* First Rhythmic Heart */}
-          <div className="relative">
-            <div 
-              className={`w-16 h-16 relative transition-all duration-150 ${
-                isPlaying ? 'animate-pulse' : ''
-              } ${
-                beatPhase === 0 || beatPhase === 2 ? 'scale-110' : 'scale-100'
-              }`}
-              style={{
-                filter: 'drop-shadow(0 0 20px rgba(255, 20, 147, 0.6))'
-              }}
-            >
-              {/* Heart shape using two circles and rotation */}
-              <div className="absolute inset-0 rotate-45 transform origin-center">
-                <div className="absolute bg-gradient-to-br from-red-400 via-pink-400 to-purple-500 
-                                w-16 h-16 rounded-full -left-8 top-0 
-                                shadow-lg shadow-pink-500/50" />
-                <div className="absolute bg-gradient-to-br from-red-400 via-pink-400 to-purple-500 
-                                w-16 h-16 rounded-full left-0 -top-8
-                                shadow-lg shadow-pink-500/50" />
-              </div>
-              {/* Glowing center */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-6 h-6 rounded-full bg-white/30 ${
-                  isPlaying && (beatPhase === 1 || beatPhase === 3) ? 'animate-ping' : ''
-                }`} />
-              </div>
-            </div>
-            
-            {/* Heart sparkles */}
-            {isPlaying && (
-              <div className="absolute -top-2 -right-2">
-                <div className={`w-2 h-2 bg-yellow-300 rounded-full ${
-                  beatPhase % 2 === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                } transition-all duration-300`} />
-              </div>
-            )}
-          </div>
+  const HeartShape = ({ className, gradient, delay = 0, sparkles = false }) => (
+    <div className="relative">
+      <div 
+        className={`w-20 h-20 relative transition-all duration-200 ${
+          isPlaying ? `transform ${
+            (beatPhase + delay) % 4 === 0 || (beatPhase + delay) % 4 === 2 ? 'scale-125' : 'scale-110'
+          }` : 'scale-100'
+        } ${className}`}
+        style={{
+          filter: `drop-shadow(0 0 ${20 + glowIntensity * 8}px rgba(255, 20, 147, ${0.7 + glowIntensity * 0.2}))`
+        }}
+      >
+        {/* Heart shape using CSS */}
+        <div className="absolute inset-0 transform rotate-45">
+          <div 
+            className={`absolute w-14 h-14 rounded-full -left-7 top-0 ${gradient}`}
+            style={{
+              boxShadow: `0 0 ${15 + glowIntensity * 5}px rgba(255, 105, 180, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.3)`
+            }}
+          />
+          <div 
+            className={`absolute w-14 h-14 rounded-full left-0 -top-7 ${gradient}`}
+            style={{
+              boxShadow: `0 0 ${15 + glowIntensity * 5}px rgba(255, 105, 180, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.3)`
+            }}
+          />
+        </div>
+        
+        {/* Inner glow effect */}
+        <div className="absolute inset-0 transform rotate-45">
+          <div className="absolute w-10 h-10 rounded-full -left-5 top-2 bg-white/20 blur-sm" />
+          <div className="absolute w-10 h-10 rounded-full left-2 -top-5 bg-white/20 blur-sm" />
+        </div>
 
-          {/* Second Rhythmic Heart (slightly offset rhythm) */}
-          <div className="relative">
-            <div 
-              className={`w-16 h-16 relative transition-all duration-150 ${
-                isPlaying ? 'animate-pulse' : ''
-              } ${
-                beatPhase === 1 || beatPhase === 3 ? 'scale-110' : 'scale-100'
-              }`}
-              style={{
-                filter: 'drop-shadow(0 0 20px rgba(255, 20, 147, 0.6))'
-              }}
-            >
-              <div className="absolute inset-0 rotate-45 transform origin-center">
-                <div className="absolute bg-gradient-to-br from-purple-400 via-pink-400 to-red-500 
-                                w-16 h-16 rounded-full -left-8 top-0 
-                                shadow-lg shadow-purple-500/50" />
-                <div className="absolute bg-gradient-to-br from-purple-400 via-pink-400 to-red-500 
-                                w-16 h-16 rounded-full left-0 -top-8
-                                shadow-lg shadow-purple-500/50" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-6 h-6 rounded-full bg-white/30 ${
-                  isPlaying && (beatPhase === 0 || beatPhase === 2) ? 'animate-ping' : ''
-                }`} />
-              </div>
-            </div>
-            
-            {isPlaying && (
-              <div className="absolute -top-2 -left-2">
-                <div className={`w-2 h-2 bg-yellow-300 rounded-full ${
-                  beatPhase % 2 === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-                } transition-all duration-300`} />
-              </div>
-            )}
+        {/* Pulsing center light */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className={`w-4 h-4 rounded-full bg-white transition-all duration-200 ${
+            isPlaying && ((beatPhase + delay) % 4 === 0) ? 'opacity-90 scale-150' : 'opacity-40 scale-100'
+          }`} />
+        </div>
+      </div>
+
+      {/* Enhanced sparkles */}
+      {sparkles && isPlaying && (
+        <>
+          <div className="absolute -top-3 -right-3">
+            <div className={`w-3 h-3 bg-yellow-200 rounded-full transition-all duration-300 ${
+              (beatPhase + delay) % 2 === 0 ? 'opacity-100 scale-100 animate-ping' : 'opacity-0 scale-50'
+            }`} />
+          </div>
+          <div className="absolute -bottom-2 -left-3">
+            <div className={`w-2 h-2 bg-pink-200 rounded-full transition-all duration-300 ${
+              (beatPhase + delay) % 3 === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+            }`} />
+          </div>
+          <div className="absolute top-2 -left-4">
+            <div className={`w-2 h-2 bg-purple-200 rounded-full transition-all duration-300 ${
+              (beatPhase + delay) % 3 === 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+            }`} />
           </div>
         </>
+      )}
+    </div>
+  );
+
+  return (
+    <div className="flex space-x-6 justify-center items-center mt-6 mb-4">
+      {!isBroken ? (
+        <>
+          {/* First Enhanced Heart */}
+          <HeartShape
+            gradient="bg-gradient-to-br from-pink-400 via-red-400 to-purple-500"
+            sparkles={true}
+          />
+
+          {/* Second Enhanced Heart */}
+          <HeartShape
+            gradient="bg-gradient-to-br from-purple-400 via-pink-400 to-red-500"
+            delay={2}
+            sparkles={true}
+          />
+        </>
       ) : (
-        // Broken hearts with dramatic effect
+        // Enhanced broken hearts with more dramatic effects
         <div className="flex space-x-4 relative">
-          {/* Broken heart pieces with crack effect */}
+          {/* First broken heart piece */}
           <div className="relative">
-            <div className="w-16 h-16 relative transform -rotate-12 animate-bounce"
+            <div className="w-20 h-20 relative transform -rotate-12 animate-bounce"
                  style={{
-                   filter: 'drop-shadow(0 0 15px rgba(139, 69, 19, 0.8))'
+                   filter: 'drop-shadow(0 0 20px rgba(220, 38, 38, 0.8))',
+                   animationDuration: '2s'
                  }}>
-              <div className="absolute inset-0 rotate-45 transform origin-center">
-                <div className="absolute bg-gradient-to-br from-red-700 via-red-600 to-red-800 
-                                w-16 h-16 rounded-full -left-8 top-0 opacity-80
-                                shadow-lg shadow-red-800/60" />
-                <div className="absolute bg-gradient-to-br from-red-700 via-red-600 to-red-800 
-                                w-16 h-16 rounded-full left-0 -top-8 opacity-80
-                                shadow-lg shadow-red-800/60" />
+              <div className="absolute inset-0 transform rotate-45">
+                <div className="absolute w-14 h-14 rounded-full -left-7 top-0 
+                               bg-gradient-to-br from-red-800 via-red-700 to-red-900 
+                               opacity-90 shadow-lg shadow-red-800/60"
+                     style={{
+                       clipPath: 'polygon(0 0, 70% 0, 50% 100%, 0 80%)'
+                     }} />
+                <div className="absolute w-14 h-14 rounded-full left-0 -top-7 
+                               bg-gradient-to-br from-red-800 via-red-700 to-red-900 
+                               opacity-90 shadow-lg shadow-red-800/60"
+                     style={{
+                       clipPath: 'polygon(30% 0, 100% 0, 100% 80%, 50% 100%)'
+                     }} />
               </div>
-              {/* Crack lines */}
+              
+              {/* Jagged crack lines */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-1 bg-black/60 transform rotate-45" />
-                <div className="w-6 h-1 bg-black/40 transform -rotate-45 absolute" />
+                <div className="w-12 h-1 bg-black/80 transform rotate-45 shadow-md" />
+                <div className="w-10 h-1 bg-black/60 transform -rotate-45 absolute shadow-md" />
+                <div className="w-8 h-1 bg-black/40 transform rotate-12 absolute shadow-md" />
               </div>
             </div>
             
-            {/* Falling pieces */}
-            <div className="absolute top-8 left-2 w-2 h-2 bg-red-600 rounded animate-bounce" 
-                 style={{ animationDelay: '0.5s' }} />
+            {/* Falling heart pieces */}
+            <div className="absolute top-12 left-3 w-3 h-3 bg-red-600 rounded animate-bounce opacity-80" 
+                 style={{ animationDelay: '0.5s', animationDuration: '1.5s' }} />
+            <div className="absolute top-8 right-2 w-2 h-2 bg-red-700 rounded animate-bounce opacity-60" 
+                 style={{ animationDelay: '1s', animationDuration: '2s' }} />
           </div>
 
+          {/* Second broken heart piece */}
           <div className="relative">
-            <div className="w-16 h-16 relative transform rotate-12 animate-bounce"
+            <div className="w-20 h-20 relative transform rotate-12 animate-bounce"
                  style={{
-                   filter: 'drop-shadow(0 0 15px rgba(139, 69, 19, 0.8))',
-                   animationDelay: '0.3s'
+                   filter: 'drop-shadow(0 0 20px rgba(220, 38, 38, 0.8))',
+                   animationDelay: '0.3s',
+                   animationDuration: '2s'
                  }}>
-              <div className="absolute inset-0 rotate-45 transform origin-center">
-                <div className="absolute bg-gradient-to-br from-red-700 via-red-600 to-red-800 
-                                w-16 h-16 rounded-full -left-8 top-0 opacity-80
-                                shadow-lg shadow-red-800/60" />
-                <div className="absolute bg-gradient-to-br from-red-700 via-red-600 to-red-800 
-                                w-16 h-16 rounded-full left-0 -top-8 opacity-80
-                                shadow-lg shadow-red-800/60" />
+              <div className="absolute inset-0 transform rotate-45">
+                <div className="absolute w-14 h-14 rounded-full -left-7 top-0 
+                               bg-gradient-to-br from-red-900 via-red-800 to-red-700 
+                               opacity-90 shadow-lg shadow-red-800/60"
+                     style={{
+                       clipPath: 'polygon(50% 0, 100% 20%, 100% 100%, 0 100%)'
+                     }} />
+                <div className="absolute w-14 h-14 rounded-full left-0 -top-7 
+                               bg-gradient-to-br from-red-900 via-red-800 to-red-700 
+                               opacity-90 shadow-lg shadow-red-800/60"
+                     style={{
+                       clipPath: 'polygon(0 20%, 50% 0, 100% 100%, 0 100%)'
+                     }} />
               </div>
+              
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-1 bg-black/60 transform -rotate-45" />
-                <div className="w-6 h-1 bg-black/40 transform rotate-45 absolute" />
+                <div className="w-12 h-1 bg-black/80 transform -rotate-45 shadow-md" />
+                <div className="w-10 h-1 bg-black/60 transform rotate-45 absolute shadow-md" />
+                <div className="w-6 h-1 bg-black/40 transform -rotate-12 absolute shadow-md" />
               </div>
             </div>
             
-            <div className="absolute top-8 right-2 w-2 h-2 bg-red-600 rounded animate-bounce" 
-                 style={{ animationDelay: '0.8s' }} />
+            <div className="absolute top-12 right-3 w-3 h-3 bg-red-600 rounded animate-bounce opacity-80" 
+                 style={{ animationDelay: '0.8s', animationDuration: '1.8s' }} />
+            <div className="absolute top-10 left-2 w-2 h-2 bg-red-700 rounded animate-bounce opacity-60" 
+                 style={{ animationDelay: '1.2s', animationDuration: '1.6s' }} />
           </div>
           
-          {/* Shattered pieces floating */}
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <div className="w-1 h-1 bg-red-500 rounded animate-ping" />
+          {/* Enhanced floating debris */}
+          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+            <div className="w-2 h-2 bg-red-500 rounded animate-ping opacity-70" />
           </div>
-          <div className="absolute top-12 left-1/4">
-            <div className="w-1 h-1 bg-red-400 rounded animate-pulse" />
+          <div className="absolute top-16 left-1/4">
+            <div className="w-2 h-2 bg-red-400 rounded animate-pulse opacity-60" />
           </div>
-          <div className="absolute top-12 right-1/4">
-            <div className="w-1 h-1 bg-red-400 rounded animate-pulse" 
+          <div className="absolute top-16 right-1/4">
+            <div className="w-2 h-2 bg-red-400 rounded animate-pulse opacity-60" 
                  style={{ animationDelay: '0.5s' }} />
+          </div>
+          <div className="absolute top-20 left-1/3">
+            <div className="w-1 h-1 bg-red-300 rounded animate-bounce opacity-50" 
+                 style={{ animationDelay: '0.7s' }} />
           </div>
         </div>
       )}
@@ -370,9 +402,9 @@ const AudioPlayerVisualizer = () => {
 
         {/* Enhanced Hearts for "This Feeling" */}
         {songsList[currentSongIndex].title === "This Feeling" && (
-          <div className="w-64 bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+          <div className="w-64 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 overflow-hidden">
             <HeartAnimation 
-              isBroken={currentTime >= 174.8 } 
+              isBroken={currentTime >= 174.8} 
               isPlaying={isPlaying}
             />  
           </div>
@@ -413,17 +445,66 @@ const AudioPlayerVisualizer = () => {
             </button>
           </div>
 
-          {/* Slider below buttons */}
+          {/* Enhanced Slider with red hearts */}
           <div className="w-full mt-2">
             <div className="flex items-center justify-between text-white/80 text-xs mb-1">
               <span>{formatTime(currentTime)}</span>
               <span>{formatTime(duration)}</span>
             </div>
-            <div className="relative w-full h-2 rounded-full bg-white/20 overflow-hidden">
+            <div className="relative w-full h-3 rounded-full bg-white/20 overflow-visible">
+              {/* Progress bar background */}
               <div
-                className="h-full bg-gradient-to-r from-purple-500 via-pink-400 to-orange-300 transition-all duration-150"
+                className="h-full bg-gradient-to-r from-purple-500 via-pink-400 to-orange-300 transition-all duration-150 rounded-full"
                 style={{ width: `${progressPercentage}%` }}
               />
+              
+              {/* Red hearts at timeline positions for "This Feeling" */}
+              {songsList[currentSongIndex].title === "This Feeling" && duration > 0 && (
+                <div className="absolute top-0 left-0 w-full h-3 pointer-events-none">
+                  {/* Heart at 174.8 seconds (heartbreak moment) */}
+                  <div 
+                    className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 z-10"
+                    style={{ left: `${(174.8 / duration) * 100}%` }}
+                  >
+                    <div className="relative">
+                      <div className="w-6 h-6 transform rotate-45 bg-gradient-to-br from-red-500 to-red-700 shadow-lg animate-pulse">
+                        <div className="absolute w-6 h-6 rounded-full bg-gradient-to-br from-red-500 to-red-700 -left-3 top-0" />
+                        <div className="absolute w-6 h-6 rounded-full bg-gradient-to-br from-red-500 to-red-700 left-0 -top-3" />
+                      </div>
+                      {/* Crack effect when reached */}
+                      {currentTime >= 174.8 && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-4 h-0.5 bg-black/80 transform rotate-45" />
+                          <div className="w-3 h-0.5 bg-black/60 transform -rotate-45 absolute" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* Additional smaller hearts at other emotional moments */}
+                  <div 
+                    className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                    style={{ left: `${(60 / duration) * 100}%` }}
+                  >
+                    <div className="w-3 h-3 transform rotate-45 bg-gradient-to-br from-pink-400 to-red-400 opacity-70">
+                      <div className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-pink-400 to-red-400 -left-1.5 top-0" />
+                      <div className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-pink-400 to-red-400 left-0 -top-1.5" />
+                    </div>
+                  </div>
+                  
+                  <div 
+                    className="absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2"
+                    style={{ left: `${(120 / duration) * 100}%` }}
+                  >
+                    <div className="w-3 h-3 transform rotate-45 bg-gradient-to-br from-pink-400 to-red-400 opacity-70">
+                      <div className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-pink-400 to-red-400 -left-1.5 top-0" />
+                      <div className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-pink-400 to-red-400 left-0 -top-1.5" />
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Slider input */}
               <input
                 type="range"
                 min="0"
@@ -434,7 +515,7 @@ const AudioPlayerVisualizer = () => {
                 onMouseUp={handleSliderMouseUp}
                 onTouchStart={handleSliderMouseDown}
                 onTouchEnd={handleSliderMouseUp}
-                className="absolute inset-0 w-full h-2 opacity-0 cursor-pointer"
+                className="absolute inset-0 w-full h-3 opacity-0 cursor-pointer z-20"
               />
             </div>
           </div>
