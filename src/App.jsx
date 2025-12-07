@@ -39,7 +39,7 @@ const educationData = [
 
 const workData = [
   {
-    heading: "GURUGRAM | 2024-Present",
+    heading: "GURUGRAM | 2024-2025",
     imgSrc: "/education/zypp_logo.png",
     imgAlt: "Zypp Electric",
     details: [
