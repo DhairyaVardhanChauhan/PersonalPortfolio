@@ -43,38 +43,42 @@ const workData = [
     imgSrc: "/education/zypp_logo.png",
     imgAlt: "Zypp Electric",
     details: [
-      { label: "Expertise", value: "BackEnd Development" },
+      {
+        label: "Expertise",
+        value: "Backend Development",
+      },
       {
         label: "Task",
         value:
-          "Working as a backend developer in Java, using industry-relevant technology such as Spring and Spring Boot.",
+          "Developing backend systems using Java, Spring Boot, Redis, and Kafka. Built microservices for authentication, real-time rider tracking, and high-throughput data processing.",
       },
       {
         label: "Achievement",
         value:
-          "Performed Query optimization reducing the time of execution from 10s to 1s",
+          "Optimized SQL queries reducing execution time from 10s to 1s. Built a data-processing service delivering 60% faster analytics and implemented Kafka-based real-time streaming that improved data integrity by detecting 15% anomalies.",
       },
     ],
   },
   {
-    heading: "GURUGRAM | 2024-Present",
-    imgSrc: "/education/zypp_logo.png",
-    imgAlt: "Zypp Electric",
+    heading: "GURUGRAM | 2025-Present",
+    imgSrc: "/education/Salescode_LOGO.webp",
+    imgAlt: "SalesCode.ai – Testify Framework",
     details: [
-      { label: "Expertise", value: "BackEnd Development" },
+      { label: "Expertise", value: "Java & Systems Development" },
       {
         label: "Task",
         value:
-          "Working as a backend developer in Java, using industry-relevant technology such as Spring and Spring Boot.",
+          "Worked on a custom testing framework using Java ClassLoaders with a child-first strategy to hot-swap test files at runtime.",
       },
       {
         label: "Achievement",
         value:
-          "Performed Query optimization reducing the time of execution from 10s to 1s",
+          "Enabled real-time test execution updates without restarts, improving developer speed. Strengthened architecture using extensible dynamic loading mechanisms.",
       },
     ],
   },
 ];
+
 
 const fetchData = async (setIsLoading) => {
   setIsLoading(true);

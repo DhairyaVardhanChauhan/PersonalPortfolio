@@ -21,11 +21,13 @@ const EducationSecond = ({ data }) => {
             key={index}
             className="center-content flex items-center justify-center flex-col"
           >
-            <img
-              className="w-56 h-32 mb-4 object-contain"
-              src={item.imgSrc}
-              alt={item.imgAlt}
-            />
+            <div className="w-72 h-40 mb-4 flex items-center justify-center">
+              <img
+                className="max-w-full max-h-full object-contain"
+                src={item.imgSrc}
+                alt={item.imgAlt}
+              />
+            </div>
             <h2 className="xs:text-lg lg:text-2xl font-bold text-gray-800 mb-2">
               {item.heading}
             </h2>

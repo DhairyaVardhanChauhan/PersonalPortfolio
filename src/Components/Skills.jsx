@@ -26,6 +26,10 @@ const skillData = [
   { toolTipName: "React", link: "/skills/react.png", logoSize: "h-10 w-10" },
   { toolTipName: "Node.js", link: "/skills/node.png", logoSize: "h-10 w-10" },
   { toolTipName: "Python", link: "/skills/python.png", logoSize: "h-10 w-10" },
+  { toolTipName: "Docker", link: "/skills/docker.png", logoSize: "h-10 w-10" },
+  { toolTipName: "Spring Boot", link: "/skills/spring.webp", logoSize: "h-10 w-10" },
+  { toolTipName: "Kafka", link: "/skills/kafka.png", logoSize: "h-10 w-10" },
+  { toolTipName: "Redis", link: "/skills/redis.png", logoSize: "h-10 w-10" },
 ];
 
 const dataBases = [
