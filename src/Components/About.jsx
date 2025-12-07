@@ -66,46 +66,48 @@ const About = () => {
           viewport={{ once: true }}
         >
           <p className="text-justify">
-            Hi there! My name is <strong>Dhairya Vardhan Chauhan</strong>, and
-            I'm currently pursuing a <strong>Bachelor of Technology</strong> at
-            Bennett University with a stellar CGPA of <strong>9.4/10</strong>. I
-            am passionate about <strong>backend development</strong>, and I've
-            honed my skills by working on various projects that involve
-            designing and optimizing databases, writing efficient APIs, and
-            developing full-stack web applications.
+            Hey there! I'm <strong>Dhairya Vardhan Chauhan</strong>, currently
+            pursuing a<strong> Bachelor of Technology</strong> at Bennett
+            University with a CGPA of
+            <strong> 9.51/10</strong>. I love building and scaling backend
+            systems, and I spend most of my time working with Java, Spring Boot,
+            and databases to create clean, reliable, and well-optimized
+            architectures. Somehow, I managed to do all this while still
+            occasionally touching grass.
           </p>
 
           <p className="text-justify">
-            I've recently dived deep into problem-solving on{" "}
-            <strong>LeetCode</strong>, where I have solved over{" "}
-            <strong>1200+ problems</strong> and participated in more than{" "}
-            <strong>50 contests</strong>, achieving a top{" "}
-            <strong>5% ranking</strong> with a best rating of{" "}
-            <strong>1855</strong>. My dedication to improving my algorithmic
-            skills has earned me the title of <strong>Knight</strong> on
-            LeetCode.
+            I'm also deeply into problem-solving on <strong>LeetCode</strong>,
+            where I’ve solved over <strong>1400+ problems</strong> and
+            participated in more than
+            <strong> 50 contests</strong>. I hold a top{" "}
+            <strong>5% ranking</strong> with a peak rating of{" "}
+            <strong>1855</strong>, and proudly wear the title of
+            <strong> Knight</strong> on the platform.
           </p>
 
           <p className="text-justify">
-            In addition to my backend expertise, I've explored web development
-            by building projects like a <strong>DSA Sheet Maker</strong> and a{" "}
-            <strong>Sorting Visualizer</strong>, which have helped me better
-            understand user interaction and experience. My projects range from
-            practical tools to interactive applications, all designed to improve
-            efficiency and user engagement.
+            I enjoy building things from scratch — from a fully functional
+            <strong> multithreaded web server</strong> in Java to a self-made
+            <strong> Operational Transformation (OT) engine</strong> for
+            real-time collaborative editing (think Google Docs, but
+            handcrafted). I've also created tools like a{" "}
+            <strong>Sorting Visualizer</strong> and a
+            <strong> DSA Sheet Maker</strong>, blending backend logic with
+            smooth user interaction.
           </p>
 
           <p className="text-justify">
-            When I'm not coding, you'll likely find me exploring new
-            technologies or contributing to the{" "}
-            <strong>developer community</strong>. I'm excited to continue
-            growing my skills and contributing to impactful projects in the
-            future.
+            When I'm not coding, I'm usually exploring new technologies,
+            breaking and fixing my own side projects, or contributing to the
+            developer community. I love learning, experimenting, and constantly
+            leveling up.
           </p>
 
           <p className="text-justify">
-            Thank you for taking the time to learn more about me. I'm eager to
-            see where my journey in software development takes me next!
+            Thanks for taking the time to know a bit about me. I’m excited for
+            all the new challenges and opportunities this journey in software
+            development has in store.
           </p>
 
           <a

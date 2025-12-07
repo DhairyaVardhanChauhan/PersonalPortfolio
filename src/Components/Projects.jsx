@@ -45,6 +45,46 @@ const projectsData = [
     ],
     link: "http://paletteportal.rf.gd/frontend/register.php?i=2",
   },
+  {
+    heading: "Operational Transformation Engine",
+    cardImage: "bg-[url('/projectImages/writing.gif')]",
+    cardContent:
+      "A fully custom-built Operational Transformation (OT) engine powering real-time collaborative text editing. Similar to Google Docs-style syncing but implemented from scratch using Java and an OT algorithm.",
+    skills: [
+      { link: "/skills/java.png", logoSize: "h-8 w-8" },
+      { link: "/skills/dataStructures.png", logoSize: "h-8 w-8" },
+      { link: "/skills/algorithms.png", logoSize: "h-8 w-8" },
+      { link: "/skills/spring.webp", logoSize: "h-8 w-8" }
+    ],
+    link: "https://github.com/DhairyaVardhanChauhan/OperationalTransformation",
+  },
+  {
+    heading: "MultiThreaded Web Server",
+    cardImage: "bg-[url('/projectImages/server.gif')]",
+    cardContent:
+      "A Java-based multithreaded web server built from scratch using sockets and thread-handling. Capable of serving multiple clients concurrently, mimicking the foundations of real web servers.",
+    skills: [
+      { link: "/skills/java.png", logoSize: "h-8 w-8" },
+      { link: "/skills/dataStructures.png", logoSize: "h-8 w-8" },
+      { link: "/skills/algorithms.png", logoSize: "h-8 w-8" },
+    ],
+    link: "https://github.com/DhairyaVardhanChauhan/MultiThreadedWebServer",
+  },
+  {
+    heading: "Expense Tracker",
+    cardImage: "bg-[url('/projectImages/expense.gif')]",
+    cardContent:
+      "A full-featured Expense Tracker application with user authentication, category-wise expense tracking, and clean UI flows. Built as a modular backend-first project with focus on clean architecture.",
+    skills: [
+      { link: "/skills/java.png", logoSize: "h-8 w-8" },
+      { link: "/skills/spring.webp", logoSize: "h-8 w-8" },
+      { link: "/skills/docker.png", logoSize: "h-8 w-8" },
+      { link: "/skills/react.png", logoSize: "h-8 w-8" }
+
+    ],
+    link: "https://github.com/DhairyaVardhanChauhan/ExpenseTracker",
+  }
+      
 ];
 
 const Projects = () => {
